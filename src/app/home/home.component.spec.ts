@@ -26,8 +26,6 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
     const img: HTMLImageElement = fixture.nativeElement.querySelector('img');
     expect(img).toBeTruthy();
-    expect(img.getAttribute('alt')).toBe(
-      'Imagem de entrada da aplicação SharedPhotos'
-    );
+    expect(img.getAttribute('alt')).toBe('Imagem da home do site SharedPhotos');
   });
 });

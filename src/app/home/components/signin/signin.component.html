@@ -1,14 +1,15 @@
-<form class="flex flex-col items-center justify-center w-full">
+<form class="flex flex-col items-center justify-center w-full" [formGroup]="loginForm">
   <h1>Faça login</h1>
 
   <mat-form-field>
     <mat-label>E-mail</mat-label>
-    <input data-ps="input-email" type="email" matInput />
+    <input data-ps="input-email" formControlName="email" type="email" matInput />
   </mat-form-field>
   <mat-form-field>
     <mat-label>Password</mat-label>
     <input
       matInput
+      formControlName="password"
       data-ps="input-password"
       [type]="hide ? 'password' : 'text'"
     />
