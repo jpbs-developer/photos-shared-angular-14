@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeModule } from '../../home.module';
 
 import { SigninComponent } from './signin.component';
 
@@ -8,16 +10,30 @@ describe('SigninComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SigninComponent ]
-    })
-    .compileComponents();
+      imports: [HomeModule, NoopAnimationsModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SigninComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display two inputs', () => {
+    const inputs = fixture.nativeElement.querySelectorAll('input');
+    expect(inputs.length).toEqual(2);
+  });
+
+  it('should change type input password when clicked button', () => {
+    fixture.detectChanges()
+    const input: HTMLInputElement = fixture.nativeElement.querySelector('[data-ps="input-password"]');
+    const iconButton: HTMLButtonElement = fixture.nativeElement.querySelector('#visible-password');
+    expect(input.getAttribute('type')).withContext('Password type is password').toBe('password')
+    iconButton.click()
+    fixture.detectChanges()
+    expect(input.getAttribute('type')).withContext('Password type is text').toBe('text')
+  
   });
 });
