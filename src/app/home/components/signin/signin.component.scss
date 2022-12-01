@@ -1,0 +1,17 @@
+mat-form-field {
+  @apply w-full;
+}
+h1 {
+  @apply text-3xl font-medium mb-10;
+}
+
+#login-button {
+  @apply bg-sky-500 text-white font-medium w-full;
+}
+
+.not-user {
+  @apply text-base font-medium pt-3;
+  a {
+    @apply text-sky-600 cursor-pointer;
+  }
+}

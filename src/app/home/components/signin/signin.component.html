@@ -1,4 +1,6 @@
-<form>
+<form class="flex flex-col items-center justify-center w-full">
+  <h1>Faça login</h1>
+
   <mat-form-field>
     <mat-label>E-mail</mat-label>
     <input data-ps="input-email" type="email" matInput />
@@ -22,4 +24,13 @@
       <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
     </button>
   </mat-form-field>
+
+  <button mat-stroked-button type="submit" id="login-button">Login</button>
+
+  <h5 class="not-user">
+    Not a user?
+    <a tabindex="0" aria-label="Not a user? Register now" role="button"
+      >Register now</a
+    >
+  </h5>
 </form>

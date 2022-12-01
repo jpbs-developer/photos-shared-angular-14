@@ -9,6 +9,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [HomeComponent, SigninComponent, SignupComponent],
@@ -17,7 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
     HomeRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
   ],
 })
 export class HomeModule {}
