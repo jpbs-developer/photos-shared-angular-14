@@ -1,9 +1,18 @@
-<form class="flex flex-col items-center justify-center w-full" [formGroup]="loginForm">
+<form
+  class="flex flex-col items-center justify-center w-full"
+  [formGroup]="loginForm"
+>
   <h1>Faça login</h1>
 
   <mat-form-field>
     <mat-label>E-mail</mat-label>
-    <input data-ps="input-email" formControlName="email" type="email" matInput />
+    <input
+      data-ps="input-email"
+      formControlName="email"
+      type="email"
+      matInput
+    />
+    <mat-error>Field is required</mat-error>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Password</mat-label>
@@ -24,6 +33,7 @@
     >
       <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
     </button>
+    <mat-error>Field is required</mat-error>
   </mat-form-field>
 
   <button mat-stroked-button type="submit" id="login-button">Login</button>
